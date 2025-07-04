@@ -111,3 +111,6 @@ jobs:
 
       - name: Test Java
         run: mvn -B clean install -Dspotless.check.skip=true
+
+      - name: Sanity check
+        run: ./scripts/check-versions.sh

@@ -69,6 +69,13 @@ jobs:
 
       # Ecosystem project specific setup
 
+      # opa-java-wasm
+      - name: Install Open Policy Agent
+        if: matrix.project == 'StyraInc/opa-java-wasm'
+        uses: open-policy-agent/setup-opa@v2
+        with:
+          version: 0.70.0
+
       # QuickJs4J
       - name: Set up Rust
         if: matrix.project == 'roastedroot/quickjs4j'

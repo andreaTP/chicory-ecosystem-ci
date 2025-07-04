@@ -107,7 +107,7 @@ jobs:
           rustup target add wasm32-wasip1
           make build
 
-      # Common install and test
+      # Common install and test for projects
 
       - name: Test Java
         run: mvn -B clean install -Dspotless.check.skip=true

@@ -54,16 +54,9 @@ jobs:
         with:
           path: ecosystem-ci
       - name: Checkout ${{ matrix.project }} sources
-        if: matrix.project != 'roastedroot/sqlite4j'
         uses: actions/checkout@v4
         with:
           repository: ${{ matrix.project }}
-      - name: Checkout sqlite4j sources
-        if: matrix.project == 'roastedroot/sqlite4j'
-        uses: actions/checkout@v4
-        with:
-          repository: ${{ matrix.project }}
-          ref: fix-flaky-hammer
       - name: Set up Java
         uses: actions/setup-java@v4
         with:

@@ -52,6 +52,7 @@ jobs:
       - name: Checkout sources
         uses: actions/checkout@v4
         with:
+          repository: andreaTP/chicory-ecosystem-ci
           path: ecosystem-ci
       - name: Checkout ${{ matrix.project }} sources
         uses: actions/checkout@v4
@@ -108,9 +109,6 @@ jobs:
 
       - name: Test Java
         run: mvn -B clean install -Dspotless.check.skip=true
-
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
 
       - name: Sanity check
         run: ./ecosystem-ci/scripts/check-versions.sh
